@@ -59,16 +59,32 @@ static const char *colors[][3]      = {
     [SchemeBtnPrev]    = { green,   black,  black },
     [SchemeBtnNext]    = { yellow,  black,  black },
     [SchemeBtnClose]   = { red,     black,  black },
+    [SchemeColorEW]    = { orange,   black,  black }, // color ewww launcher icon
+    [SchemeColorFF]    = { pink,   black,  black }, // color firefox launcher icon
+    [SchemeColorDS]    = { red,   black,  black }, // color discord launcher icon
+    [SchemeColorTG]    = { green,   black,  black }, // color telegram launcher icon
+    [SchemeColorMS]    = { blue,   black,  black }, // color mintstick launcher icon
+    [SchemeColorPC]    = { yellow,   black,  black }, // color pavucontrol launcher icon
 };
 
 /* tagging */
 static char *tags[] = {"", "", "", "", ""};
 
 static const char* eww[] = { "eww", "open" , "eww", NULL };
+static const char* firefox[] = { "firefox", "open", "firefox", NULL };
+static const char* discord[] = { "discord", "open" , "discord", NULL };
+static const char* telegram[] = { "telegram-desktop", "open" , "telegram-desktop", NULL };
+static const char* mintstick[] = { "mintstick", "-m", "iso", NULL};
+static const char* pavucontrol[] = { "pavucontrol", NULL };
 
 static const Launcher launchers[] = {
     /* command     name to display */
     { eww,         "" },
+    { firefox,         "" },
+    { discord,       "ﱲ" },
+    { telegram,      "" },
+    { mintstick,     "虜" },
+    { pavucontrol,   "墳" },
 };
 
 static const int tagschemes[] = {
@@ -287,3 +303,5 @@ static const Button buttons[] = {
     { ClkTabNext,           0,              Button1,        movestack,      { .i = +1 } },
     { ClkTabClose,          0,              Button1,        killclient,     {0} },
 };
+
+

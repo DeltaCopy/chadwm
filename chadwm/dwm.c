@@ -108,7 +108,13 @@ enum {
   TabNorm,
   SchemeBtnPrev,
   SchemeBtnNext,
-  SchemeBtnClose
+  SchemeBtnClose,
+  SchemeColorEW,
+  SchemeColorFF,
+  SchemeColorDS,
+  SchemeColorTG,
+  SchemeColorMS,
+  SchemeColorPC
 }; /* color schemes */
 enum {
   NetSupported,
@@ -1519,6 +1525,30 @@ void drawbar(Monitor *m) {
 
   	for (i = 0; i < LENGTH(launchers); i++)
 	{
+        if (launchers[i].command == eww){
+            drw_setscheme(drw, scheme[SchemeColorEW]);
+        }
+
+        if (launchers[i].command == firefox){
+          drw_setscheme(drw, scheme[SchemeColorFF]);
+        }
+
+        if (launchers[i].command == discord){
+          drw_setscheme(drw, scheme[SchemeColorDS]);
+        }
+
+        if (launchers[i].command == telegram){
+          drw_setscheme(drw, scheme[SchemeColorTG]);
+        }
+
+        if (launchers[i].command == mintstick){
+          drw_setscheme(drw, scheme[SchemeColorMS]);
+        }
+
+        if (launchers[i].command == pavucontrol){
+          drw_setscheme(drw, scheme[SchemeColorPC]);
+        }
+
 		w = TEXTW(launchers[i].name);
 		drw_text(drw, x, 0, w, bh, lrpad / 2, launchers[i].name, urg & 1 << i);
 		x += w;
